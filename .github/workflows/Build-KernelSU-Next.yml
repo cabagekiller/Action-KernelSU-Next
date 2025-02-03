@@ -115,10 +115,11 @@ jobs:
            
            cp ../kernel_patches/selinux.c_fix.patch ./
            patch -p1 -F 3 < selinux.c_fix.patch
+           pwd
 
       - name: Add SUSFS Configuration Settings
-        working-directory: /kernel_workspace/kernel_platform
         run: |
+          cd ./kernel_workspace/kernel_platform
           
           echo "Adding configuration settings to gki_defconfig..."
           
